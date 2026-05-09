@@ -1,4 +1,4 @@
-git package com.example.mgefrozenfoods;
+package com.example.mgefrozenfoods;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
