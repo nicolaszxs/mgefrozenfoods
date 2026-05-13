@@ -16,22 +16,21 @@ public class ProductsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
 
-        // Link the XML IDs to Java
+
         tvCategoryTitle = findViewById(R.id.tvCategoryTitle);
         rvProductsGrid = findViewById(R.id.rvProductsGrid);
 
-        // Set the Grid (2 columns)
+
         rvProductsGrid.setLayoutManager(new GridLayoutManager(this, 2));
 
-        // Kunin yung pinasang Category Name galing HomeActivity
         String category = getIntent().getStringExtra("CATEGORY_NAME");
 
         if (category != null && !category.isEmpty()) {
-            tvCategoryTitle.setText(category); // Halimbawa: "Pork", "Beef", etc.
+            tvCategoryTitle.setText(category); 
         } else {
             tvCategoryTitle.setText("All Products");
         }
 
-        // Dito natin ikakabit yung Adapter para sa listahan ng frozen foods soon!
+
     }
 }
