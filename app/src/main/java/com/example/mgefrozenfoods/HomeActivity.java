@@ -12,6 +12,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     private RadioGroup rgPaymentMethod;
     private RadioButton rbCOD, rbGCash;
     private EditText etCheckoutAddress, etCheckoutContactNumber, etCheckoutMobile, etCheckoutReference;
+    private EditText etSearch;
     private Handler sliderHandler = new Handler();
     private String currentCategory = "";
     private double currentGrandTotal = 0;
@@ -82,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
             etCheckoutReference = findViewById(R.id.etCheckoutReference);
             tvCheckoutTotal = findViewById(R.id.tvCheckoutTotal);
             rvOrders = findViewById(R.id.rvOrders);
+            etSearch = findViewById(R.id.etSearch);
 
             orderList = new ArrayList<>();
             orderAdapter = new OrderAdapter(orderList);
@@ -117,6 +121,19 @@ public class HomeActivity extends AppCompatActivity {
 
             setupCarousel();
             loadUserData();
+
+            etSearch.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    filterSearch(s.toString());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {}
+            });
 
             findViewById(R.id.btnLogoutHeader).setOnClickListener(v -> performLogout());
             findViewById(R.id.btnUserLogout).setOnClickListener(v -> performLogout());
@@ -159,6 +176,25 @@ public class HomeActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void filterSearch(String text) {
+        List<Product> filtered = new ArrayList<>();
+        for (Product item : allProductsList) {
+            if (item.getName().toLowerCase().contains(text.toLowerCase()) ||
+                    item.getBrand().toLowerCase().contains(text.toLowerCase())) {
+                filtered.add(item);
+            }
+        }
+        productAdapter.updateList(filtered);
+
+        if (!text.isEmpty()) {
+            setViewVisibility(productView);
+            tvSelectedCategory.setText("Search Results");
+            updateNavHighlights(R.id.navProductsTab);
+        } else if (productView.getVisibility() == View.VISIBLE && tvSelectedCategory.getText().toString().equals("Search Results")) {
+            showProducts("All Brands");
         }
     }
 
@@ -277,7 +313,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupCategoryToggle(int id, String brand) {
-        findViewById(id).setOnClickListener(v -> showProducts(brand));
+        findViewById(id).setOnClickListener(v -> {
+            etSearch.setText("");
+            showProducts(brand);
+        });
     }
 
     private void showHome() {
