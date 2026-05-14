@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnSubmitRegister = findViewById(R.id.btnSubmitRegister);
         tvBackToLogin = findViewById(R.id.tvBackToLogin);
 
-        String[] cities = {"Select City", "Makati", "Taguig", "Manila", "Pasig", "Quezon City"};
+        String[] cities = {"Select City", "Makati"};
 
         ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities) {
             @Override
