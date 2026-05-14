@@ -132,21 +132,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         switch (city) {
             case "Makati":
-                barangays.addAll(Arrays.asList("Bangkal", "Bel-Air", "Carmona", "Cembo", "Comembo", "Dasmariñas", "East Rembo", "Guadalupe Nuevo", "Guadalupe Viejo", "Kasilawan", "La Paz", "Magallanes", "Olympia", "Palanan", "Pembo", "Pinagkaisahan", "Pio del Pilar", "Poblacion", "Post Proper Northside", "Post Proper Southside", "Rizal", "San Antonio", "San Lorenzo", "Santa Cruz", "Singkamas", "South Cembo", "Tejeros", "Urdaneta", "Valenzuela", "West Rembo"));
-                break;
-            case "Taguig":
-                barangays.addAll(Arrays.asList("Bagumbayan", "Bambang", "Calzada", "Central Bicutan", "Central Signal Village", "Fort Bonifacio", "Hagonoy", "Ibayo-Tipas", "Katuparan", "Ligid-Tipas", "Lower Bicutan", "Maharlika Village", "Napindan", "New Lower Bicutan", "North Bicutan", "North Signal Village", "Palingon", "Pinagsama", "San Roque", "Santa Ana", "South Bicutan", "South Signal Village", "Tanyag", "Tuktukan", "Upper Bicutan", "Ususan", "Wawa", "Western Bicutan"));
-                break;
-            case "Manila":
-                barangays.addAll(Arrays.asList("Binondo", "Ermita", "Intramuros", "Malate", "Paco", "Pandacan", "Port Area", "Quiapo", "Sampaloc", "San Andres", "San Miguel", "San Nicolas", "Santa Ana", "Santa Cruz", "Santa Mesa", "Tondo I", "Tondo II"));
-                break;
-            case "Pasig":
-                barangays.addAll(Arrays.asList("Bagong Ilog", "Bagong Katipunan", "Bambang", "Buting", "Caniogan", "Dela Paz", "Kalawaan", "Kapasigan", "Kapitolyo", "Malinao", "Manggahan", "Maybunga", "Oranbo", "Palatiw", "Pinagbuhatan", "Pineda", "Rosario", "Sagad", "San Joaquin", "San Jose", "San Nicolas", "Santa Cruz", "Santa Lucia", "Santa Rosa", "Santolan", "Sumilang", "Ugong"));
-                break;
-            case "Quezon City":
-                barangays.addAll(Arrays.asList("Alicia", "Amihan", "Apolonio Samson", "Baesa", "Bagbag", "Bagong Lipunan ng Crame", "Bagong Pag-asa", "Bagong Silangan", "Bagumbayan", "Bagumbuhay", "Bahay Toro", "Balingasa", "Balong Bato", "Batasan Hills", "Bayanihan", "Blue Ridge A", "Blue Ridge B", "Bungad", "Camp Aguinaldo", "Capri", "Central", "Claro", "Commonwealth", "Culiat", "Damar", "Damayan", "Damayan Lagi", "Dasmariñas", "Del Monte", "Dioquino Malabay", "Don Manuel", "Doña Imelda", "Doña Josefa", "Duyan-duyan", "E. Rodriguez", "East Kamias", "Escopa I", "Escopa II", "Escopa III", "Escopa IV", "Fairview", "Gintong Silahis", "Gulod", "Holy Spirit", "Horse Shoe", "Immaculate Concepcion", "Kaligayahan", "Kalusugan", "Kamuning", "Katipunan", "Kaunlaran", "Kristong Hari", "Krus na Ligtas", "Laging Handa", "Libis", "Lourdes", "Loyola Heights", "Maharlika", "Malaya", "Mangga", "Manresa", "Mariana", "Mariblo", "Marilag", "Masagana", "Masambong", "Matandang Balara", "Milagrosa", "Nagkaisang Nayon", "Nayon Kanluran", "New Era", "North Fairview", "Novaliches Proper", "Obrero", "Old Capitol Site", "Paang Bundok", "Pag-ibig sa Nayon", "Paligsahan", "Paltok", "Pansol", "Paraiso", "Pasong Putik Proper", "Pasong Tamo", "Payatas", "Phil-Am", "Pinyahan", "Project 6", "Quirino 2-A", "Quirino 2-B", "Quirino 2-C", "Quirino 3-A", "Ramon Magsaysay", "Roxas", "Sacred Heart", "Salvacion", "San Agustin", "San Antonio", "San Bartolome", "San Isidro", "San Isidro Labrador", "San Jose", "San Roque", "San Vicente", "Santa Cruz", "Santa Lucia", "Santa Monica", "Santa Teresita", "Santo Cristo", "Santo Niño", "Santol", "Sauyo", "Sienna", "Sikatuna Village", "Silangan", "Socorro", "South Triangle", "St. Ignatius", "St. Peter", "Talayan", "Talipapa", "Tandang Sora", "Tatalon", "Teacher's Village East", "Teacher's Village West", "U.P. Campus", "U.P. Village", "Ugong Norte", "Unang Sigaw", "Valencia", "Vasra", "Villa Maria Clara", "West Kamias", "West Triangle", "White Plains"));
-                break;
-            default:
+                barangays.addAll(Arrays.asList(
+                        "Bangkal", "Bel-Air", "Carmona", "Dasmariñas",
+                        "Guadalupe Nuevo", "Guadalupe Viejo", "Kasilawan", "La Paz",
+                        "Magallanes", "Olympia", "Palanan", "Pinagkaisahan",
+                        "Pio del Pilar", "Poblacion", "Post Proper Northside",
+                        "Post Proper Southside", "San Antonio", "San Lorenzo",
+                        "Santa Cruz", "Singkamas", "Tejeros", "Urdaneta",
+                        "Valenzuela"
+                ));
                 break;
         }
 
